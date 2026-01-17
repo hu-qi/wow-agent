@@ -1,6 +1,7 @@
 openai
 python-dotenv
 pydantic
+openai-agents
 llama-index-core
 llama-index-readers-file
 llama-index-vector-stores-faiss
