@@ -8,6 +8,46 @@
 
 想要在企业内部实现Agent自动办公的人。
 
+## 快速开始
+
+建议使用 Python 3.10 或 Python 3.11，并为本项目创建独立虚拟环境：
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # macOS / Linux
+# .venv\Scripts\activate  # Windows PowerShell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+复制环境变量示例文件：
+
+```bash
+cp .env.example .env
+```
+
+Windows PowerShell 可以使用：
+
+```powershell
+Copy-Item .env.example .env
+```
+
+然后按实际章节需要填写 `.env` 中的 API Key、Base URL 或本地 Ollama 配置。不要提交真实 `.env` 或真实 API Key。
+
+如果使用 Jupyter Notebook，建议先阅读：
+
+```text
+notebooks/README.md
+```
+
+如果运行 LlamaIndex 第05课到第08课时遇到 `.chat()` 方法不存在、异步调用报错或 workflow agent API 差异，可以先参考：
+
+```text
+docs/llamaindex-agent-api-compat.md
+docs/llamaindex-react-agent-workflow-minimal.md
+examples/llamaindex/README.md
+```
+
 ## 目录
 
 - 第01课-什么是wow-agent
