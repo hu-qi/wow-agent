@@ -2,7 +2,7 @@
 
 > 本章示例基于 LlamaIndex 的 `ReActAgent` 和 `FunctionTool`。如果运行时遇到 `ReActAgent` 没有 `.chat()` 方法、异步调用报错，或导入路径变化等问题，通常是 LlamaIndex 版本差异导致的。
 >
-> 旧版教程常见写法是 `ReActAgent.from_tools(...).chat(...)`；较新的 LlamaIndex workflow agent 写法通常会使用 `llama_index.core.agent.workflow` 下的 `ReActAgent` 和 `AgentWorkflow`，并通过 `workflow.run(user_msg=...)` 执行。两种写法的详细差异可参考 [`docs/llamaindex-agent-api-compat.md`](../../docs/llamaindex-agent-api-compat.md)。
+> 旧版教程常见写法是 `ReActAgent.from_tools(...).chat(...)`；较新的 LlamaIndex workflow agent 写法通常会使用 `llama_index.core.agent.workflow` 下的 `ReActAgent` 和 `AgentWorkflow`，并通过 `workflow.run(user_msg=...)` 执行。两种写法的详细差异可参考 [`docs/llamaindex-agent-api-compat.md`](../../docs/llamaindex-agent-api-compat.md)，新版最小示例可参考 [`docs/llamaindex-react-agent-workflow-minimal.md`](../../docs/llamaindex-react-agent-workflow-minimal.md)。
 
 首先定义工具函数，用来完成Agent的任务。注意：大模型会根据函数的注释来判断使用哪个函数来完成任务。所以，注释一定要写清楚函数的功能和返回值。
 
