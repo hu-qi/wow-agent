@@ -1,3 +1,9 @@
+## 兼容性提示
+
+> 本章示例沿用了旧版 `ReActAgent.from_tools(...).chat(...)` 写法。如果运行时遇到 `.chat()` 方法不存在、异步调用报错，或 workflow agent 相关 API 差异，可以参考新版搜索 Agent 脚本骨架：[`examples/llamaindex/search_agent_workflow.py`](../../examples/llamaindex/search_agent_workflow.py)。
+>
+> 该脚本默认保留 Bocha Web Search 工具函数，并通过 `BOCHA_API_KEY` 从 `.env` 读取密钥。使用时还需要替换 `build_llm()` 为本章中的 `OurLLM` 或其他 LlamaIndex 兼容模型配置。
+
 首先准备各种key和模型名称
 
 ```python
