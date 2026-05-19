@@ -1,3 +1,14 @@
+## 兼容性提示
+
+> 本章示例基于 LlamaIndex 的 `ReActAgent` 和 `FunctionTool`。如果运行时遇到 `ReActAgent` 没有 `.chat()` 方法、异步调用报错，或导入路径变化等问题，通常是 LlamaIndex 版本差异导致的。建议先执行：
+>
+> ```bash
+> pip install -r requirements.txt
+> python -c "import llama_index.core; print(llama_index.core.__version__)"
+> ```
+>
+> 如果使用较新的 LlamaIndex 版本，请优先检查当前版本的 Agent API；不同版本中 Agent 的创建方式、同步 / 异步调用方式可能不同。本章先保留原有 `ReActAgent.from_tools(...).chat(...)` 写法，并在后续 PR 中按版本逐步补充最小可运行示例。
+
 首先定义工具函数，用来完成Agent的任务。注意：大模型会根据函数的注释来判断使用哪个函数来完成任务。所以，注释一定要写清楚函数的功能和返回值。
 
 然后把工具函数放入FunctionTool对象中，供Agent能够使用。
