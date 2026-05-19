@@ -1,3 +1,9 @@
+## 兼容性提示
+
+> 本章示例沿用了旧版 `ReActAgent.from_tools(...).chat(...)` 写法。如果运行时遇到 `.chat()` 方法不存在、异步调用报错，或 workflow agent 相关 API 差异，可以参考新版数据库 Agent 脚本骨架：[`examples/llamaindex/database_agent_workflow.py`](../../examples/llamaindex/database_agent_workflow.py)。
+>
+> 该脚本保留了 `build_llm()` 和 `build_embedding()` 两个适配点，使用时需要替换为本章中的 Ollama 或其他 LlamaIndex 兼容模型配置。
+
 首先我们创建一个数据库：
 
 ```python
