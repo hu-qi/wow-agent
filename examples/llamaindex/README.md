@@ -11,6 +11,31 @@
 | `rag_agent_workflow.py` | 第07课 | FAISS / RAG / `QueryEngineTool` Agent 示例 |
 | `search_agent_workflow.py` | 第08课 | Bocha Web Search / `FunctionTool` 搜索 Agent 示例 |
 
+## 环境变量
+
+运行示例前，建议先从项目根目录复制 `.env.example`：
+
+```bash
+cp .env.example .env
+```
+
+Windows PowerShell 可以使用：
+
+```powershell
+Copy-Item .env.example .env
+```
+
+然后按需要填写模型服务和外部工具所需的变量，例如：
+
+```bash
+OLLAMA_BASE_URL=http://127.0.0.1:11434
+OLLAMA_CHAT_MODEL=qwen2.5:7b
+OLLAMA_EMBED_MODEL=qwen2.5:7b
+BOCHA_API_KEY=your_bocha_api_key_here
+```
+
+不要提交真实 `.env` 或真实 API Key。
+
 ## 为什么脚本里保留 `build_llm()` / `build_embedding()`
 
 这些脚本默认不硬编码具体模型服务，因为学习者可能使用：
@@ -72,6 +97,28 @@ def build_embedding():
     return OllamaEmbedding(
         base_url="http://127.0.0.1:11434",
         model_name="qwen2.5:7b",
+    )
+```
+
+也可以在代码中读取 `.env` 中的 Ollama 配置：
+
+```python
+import os
+from llama_index.llms.ollama import Ollama
+from llama_index.embeddings.ollama import OllamaEmbedding
+
+
+def build_llm():
+    return Ollama(
+        base_url=os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434"),
+        model=os.getenv("OLLAMA_CHAT_MODEL", "qwen2.5:7b"),
+    )
+
+
+def build_embedding():
+    return OllamaEmbedding(
+        base_url=os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434"),
+        model_name=os.getenv("OLLAMA_EMBED_MODEL", "qwen2.5:7b"),
     )
 ```
 
