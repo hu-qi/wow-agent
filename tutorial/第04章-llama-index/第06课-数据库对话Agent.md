@@ -1,3 +1,29 @@
+## 环境与依赖提示
+
+> 本章会用到 SQLite、SQLAlchemy、Ollama 以及 LlamaIndex 的 Ollama 插件。请先确认已经安装项目依赖：
+>
+> ```bash
+> pip install -r requirements.txt
+> ```
+>
+> 本章涉及的关键依赖包括：
+>
+> ```text
+> llama-index-core
+> llama-index-llms-ollama
+> llama-index-embeddings-ollama
+> SQLAlchemy
+> requests
+> ```
+>
+> 如果运行到 `from llama_index.llms.ollama import Ollama` 或 `from llama_index.embeddings.ollama import OllamaEmbedding` 时报错，通常是缺少 `llama-index-llms-ollama` 或 `llama-index-embeddings-ollama`。如果运行到 `create_engine` 时报错，通常是缺少 `SQLAlchemy`。
+>
+> 文中的 `base_url="http://192.168.0.123:11434"` 是示例地址，请替换为你本机或局域网中 Ollama 服务的实际地址。本机运行时通常可以使用：
+>
+> ```python
+> base_url="http://127.0.0.1:11434"
+> ```
+
 首先我们创建一个数据库：
 
 ```python
