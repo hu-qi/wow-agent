@@ -2,6 +2,14 @@
 
 本文档给出一个面向新版 LlamaIndex workflow agent API 的最小示例，用来替代旧教程中的 `ReActAgent.from_tools(...).chat(...)` 调用方式。
 
+对应的可执行脚本骨架位于：
+
+```text
+examples/llamaindex/react_agent_workflow_minimal.py
+```
+
+脚本中保留了 `build_llm()` 适配点，使用时需要替换为第05课中的 `OurLLM`、Ollama 或其他 LlamaIndex 兼容 LLM 初始化方式。
+
 ## 使用前提
 
 本示例默认你已经完成第05课前面的 LLM 初始化，并已经得到一个可用的 `llm` 对象，例如：
