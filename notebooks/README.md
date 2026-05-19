@@ -25,7 +25,19 @@ python -m ipykernel install --user --name wow-agent --display-name "wow-agent"
 
 ## 环境变量
 
-建议在项目根目录创建 `.env` 文件，并按实际情况填写：
+建议从项目根目录的 `.env.example` 复制一份 `.env`：
+
+```bash
+cp .env.example .env
+```
+
+Windows PowerShell 可以使用：
+
+```powershell
+Copy-Item .env.example .env
+```
+
+然后按实际情况填写需要的 API Key / Base URL，例如：
 
 ```bash
 OPENAI_API_KEY=your_openai_key_here
@@ -36,7 +48,7 @@ ZISHU_API_KEY=your_zishu_key_here
 # BOCHA_API_KEY=your_bocha_key_here
 ```
 
-不同章节使用的变量不同。运行前请先查看 notebook 中的 `os.getenv(...)` 调用，确认 `.env` 中已经配置对应密钥。
+不同章节使用的变量不同。运行前请先查看 notebook 中的 `os.getenv(...)` 调用，确认 `.env` 中已经配置对应密钥。不要提交真实 `.env` 或真实 API Key。
 
 ## LlamaIndex 章节注意事项
 
@@ -83,6 +95,14 @@ base_url="http://192.168.0.123:11434"
 
 ```python
 base_url="http://127.0.0.1:11434"
+```
+
+也可以在 `.env` 中统一配置：
+
+```bash
+OLLAMA_BASE_URL=http://127.0.0.1:11434
+OLLAMA_CHAT_MODEL=qwen2.5:7b
+OLLAMA_EMBED_MODEL=qwen2.5:7b
 ```
 
 ## Jupyter 中的异步调用
