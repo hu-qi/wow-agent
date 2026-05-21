@@ -1,3 +1,9 @@
+## 兼容性提示
+
+> 本章示例沿用了旧版 `ReActAgent.from_tools(...).chat(...)` 写法。如果运行时遇到 `.chat()` 方法不存在、异步调用报错，或 workflow agent 相关 API 差异，可以参考新版 RAG Agent 脚本骨架：[`examples/llamaindex/rag_agent_workflow.py`](../../examples/llamaindex/rag_agent_workflow.py)。
+>
+> 该脚本保留了 `build_llm()` 和 `build_embedding()` 两个适配点，使用时需要替换为本章中的 Ollama 或其他 LlamaIndex 兼容模型配置。
+
 我们可以把RAG当作Agent可以调用的一个工具。
 
 先配置对话模型和嵌入模型。模型的构建可以参考wow-rag课程的第二课（https://github.com/datawhalechina/wow-rag/tree/main/tutorials），里面介绍了非常多配置对话模型和嵌入模型的方式。这里采用了本地Ollama的对话模型和嵌入模型。各种配置方式都可以，只要能有个能用的llm和embedding就行。

@@ -6,6 +6,9 @@ llama-index-core
 llama-index-readers-file
 llama-index-vector-stores-faiss
 llama-index-vector-stores-qdrant
+llama-index-llms-ollama
+llama-index-embeddings-ollama
 llamaindex-py-client
 qdrant-client
+SQLAlchemy
 requests
